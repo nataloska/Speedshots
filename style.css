@@ -1,0 +1,68 @@
+/* Help */
+.tutorial{
+    align-items: center;
+}
+
+/* Game */
+
+#question{
+    margin: 10px;
+    padding: 10px;
+    background:#9f9f9f
+}
+.questions p{
+    margin: 10px;
+    padding: 10px;
+    background: tomato;
+    cursor: pointer;
+    padding-left: 30px;
+}
+.questions p:hover{
+    background:#9f9f9f;
+}
+.result{
+    position: fixed;
+    background-image: url("src/shots.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-height: 80%;
+    width: 100vw;
+    top: 50px;
+    left: 0px;
+    z-index: 1;
+    font-weight: 30px;
+    font-size: 46px;
+    font-family: roboto;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+/* footer */
+.footer{
+    color: white;
+    text-shadow: 1px 1px 2px #4a4a4a;
+}
+.about p{
+    margin:0;
+}
+.persinfo p{
+    margin:0;
+}
+.about{
+    background-color: black;
+}
+.persinfo{
+    background-color: black;
+}
+.SoMelink{
+    padding:0;
+    text-align: center;
+    background-color: black;
+}
+.SoMelink img{
+    width: 65px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
