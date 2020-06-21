@@ -7,13 +7,24 @@
     margin-left: 40%;
     margin-right: 40%;
 }
+html, body{
+    min-height: 100%;
+}
 
 /* Game */
-
+.info{
+    text-align: center;
+    font-weight: 30px;
+    font-size: 46px;
+    font-family: roboto, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    min-height: 40vw;
+}
 #question{
     margin: 10px;
     padding: 10px;
-    background:#9f9f9f
+    background:#9f9f9f;
+    border-radius: 25px;
 }
 .questions p{
     margin: 10px;
@@ -21,6 +32,7 @@
     background: tomato;
     cursor: pointer;
     padding-left: 30px;
+    border-radius: 25px;
 }
 .questions p:hover{
     background:#9f9f9f;
@@ -52,6 +64,8 @@
 }
 /* footer */
 .footer{
+    margin-left: 0px;
+    margin-right: 0px;
     color: white;
     text-shadow: 1px 1px 2px #4a4a4a;
 }

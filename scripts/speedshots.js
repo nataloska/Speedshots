@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $('#reset').hide();
     document.getElementById("start").onclick = function () {
         $('#start').hide();
+        $('.info').hide();
         start();
     };
     document.getElementById("reset").onclick = function () { reset(); };
