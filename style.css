@@ -1,6 +1,11 @@
 /* Help */
 .tutorial{
-    align-items: center;
+    text-align: center;
+}
+.tutorial ol li{
+    text-align: left;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 /* Game */
@@ -20,22 +25,30 @@
 .questions p:hover{
     background:#9f9f9f;
 }
+.questions{
+    text-align: center;
+}
+#game{
+    text-align: left;
+}
 .result{
-    position: fixed;
     background-image: url("src/shots.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    max-height: 80%;
-    width: 100vw;
-    top: 50px;
-    left: 0px;
-    z-index: 1;
+    width: 100%;
+    min-height: 40vw;
     font-weight: 30px;
     font-size: 46px;
     font-family: roboto;
     color: white;
     text-shadow: 2px 2px 4px #000000;
+}
+#score {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /* footer */
 .footer{

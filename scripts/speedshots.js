@@ -6,106 +6,150 @@
 //             return false;
 //         }
 // }
-document.addEventListener("DOMContentLoaded", function(event) {
-var questions = [
-    {
-        question: 'Test question 1?',
-        answers: [
-            { text: 'true', result: 1 },
-            { text: 'false', result: 0 },
-            { text: 'false', result: 0 },
-            { text: 'false', result: 0 }
-        ]
-    },
-    {
-        question: 'Test question 2?',
-        answers: [
-            { text: 'false', result: 0 },
-            { text: 'true', result: 1 },
-            { text: 'false', result: 0 },
-            { text: 'false', result: 0 }
-        ]
-    },
-    {
-        question: 'Test question 3?',
-        answers: [
-            { text: 'False', result: 0 },
-            { text: 'false', result: 0 },
-            { text: 'true', result: 1 },
-            { text: 'false', result: 0 }
-        ]
-    }
-];
-var QOnClick = document.getElementById('question');
-var AOnClick = document.getElementsByClassName('answer');
-var shots = document.getElementById('score');
-var time = document.getElementById('time');
-var question;
-var counter = -1;
-var correctAnswer;
-var noAnswer;
-var duration1;
-var timerInterval;
-var noAnswerInterval
-
-function timer(duration) {
-    duration1 = duration;
-    timerInterval = setInterval(function () {
-        if(duration1 > 0){
-        duration1--;
-        time.innerHTML =  duration1;
+document.addEventListener("DOMContentLoaded", function (event) {
+    var questions = [
+        {
+            question: 'Test question 1?',
+            answers: [
+                { text: 'true', result: 1 },
+                { text: 'false', result: 0 },
+                { text: 'false', result: 0 },
+                { text: 'false', result: 0 }
+            ]
+        },
+        {
+            question: 'Test question 2?',
+            answers: [
+                { text: 'false', result: 0 },
+                { text: 'true', result: 1 },
+                { text: 'false', result: 0 },
+                { text: 'false', result: 0 }
+            ]
+        },
+        {
+            question: 'Test question 3?',
+            answers: [
+                { text: 'False', result: 0 },
+                { text: 'false', result: 0 },
+                { text: 'true', result: 1 },
+                { text: 'false', result: 0 }
+            ]
         }
-    }, 1000);
-}
+    ];
+    var QOnClick = document.getElementById('question');
+    var AOnClick = document.getElementsByClassName('answer');
+    var shots = document.getElementById('score');
+    var time = document.getElementById('time');
+    var question;
+    var counter = -1;
+    var correctAnswer;
+    var _noanswer;
+    var duration1;
+    var timerInterval;
+    var noAnswerInterval
 
-function nextQuestion() {
-    counter++;
-    console.log(counter);
-    question = questions[counter];
-    QOnClick.innerHTML = (counter + 1) + ' - ' + question.question;
-    for (var i = 0; i < AOnClick.length; i++) {
-        AOnClick[i].innerHTML = question.answers[i].text;
-    }
-}
-function answer(num) {
-    let result = questions[counter].answers[num].result;
-    console.log(result);
-    if (result == 1) {
-        shots.innerHTML = '<span class="result">Correct, no shots!</span>';
-        correctAnswer = setInterval(function(){ start() }, 5000);
-    } else {
-        shots.innerHTML = '<span class="result">Incorrect, 1 shot!</span>';
-        correctAnswer = setInterval(function(){ start() }, 5000);
-    }
-}
-function noAnswer() {
-    shots.innerHTML = '<span class="result">Too late! 2 shots</span>';
-    noAnswer = setInterval(function(){ start() }, 5000);
-}
-function resetValues(){
-    clearInterval(timerInterval);
-    clearInterval(correctAnswer);
-    clearInterval(noAnswer);
-    clearInterval(noAnswerInterval);
-    question = null;
-    correctAnswer = null;
-    noAnswer = null;
-    duration1 = null;
-    timerInterval = null;
-    shots.innerHTML = "";
-}
-function start() {
-    resetValues();
-    timer(30);
-    nextQuestion();
-    for (var i=0; i<AOnClick.length; i++) {
-        (function (index) {
-            AOnClick[i].onclick = function(){
-                answer(index);
+    function timer(duration) {
+        duration1 = duration;
+        time.innerHTML = 'Time left: ' + duration1;
+        timerInterval = setInterval(function () {
+            if (duration1 > 0) {
+                duration1--;
+                time.innerHTML = 'Time left: ' + duration1;
             }
-        })(i);
+        }, 1000);
+        return;
     }
-    noAnswerInterval = setInterval( function() { noAnswer() }, 30000);
-}
-document.getElementById("start").onclick = function(){start();};
+
+    function nextQuestion() {
+        if (questions.length > (counter + 1)) {
+            console.log("questions length = " + questions.length);
+            counter++;
+            console.log("counter = " + counter);
+            question = questions[counter];
+            QOnClick.innerHTML = (counter + 1) + ' - ' + question.question;
+            for (var i = 0; i < AOnClick.length; i++) {
+                AOnClick[i].innerHTML = question.answers[i].text;
+            }
+        }
+        else {
+            resetValues();
+            $('#time').hide();
+            $('#start').hide();
+            $('#question').hide();
+            $('.answer').hide();
+            $('#game').addClass('result');
+            shots.innerHTML = 'End of game, come again!';
+        }
+    }
+    function answer(num) {
+        let result = questions[counter].answers[num].result;
+        console.log("Result = " + result);
+        if (result == 1) {
+            resetValues();
+            $('#question').hide();
+            $('.answer').hide();
+            $('#game').addClass('result');
+            shots.innerHTML = 'Correct, no shots!';
+            timer(5);
+            correctAnswer = setInterval(function () { start() }, 5000);
+        } else {
+            resetValues();
+            $('#question').hide();
+            $('.answer').hide();
+            $('#game').addClass('result');
+            shots.innerHTML = 'Incorrect, 1 shot!';
+            timer(5);
+            correctAnswer = setInterval(function () { start() }, 5000);
+        }
+    }
+    function noAnswer() {
+        resetValues();
+        $('#question').hide();
+        $('.answer').hide();
+        $('#game').addClass('result');
+        shots.innerHTML = 'Too late! 2 shots';
+        timer(5);
+        _noanswer = setInterval(function () { start() }, 5000);
+    }
+    function resetValues() {
+        clearInterval(timerInterval);
+        clearInterval(correctAnswer);
+        clearInterval(_noanswer);
+        clearInterval(noAnswerInterval);
+        question = null;
+        correctAnswer = null;
+        _noanswer = null;
+        duration1 = null;
+        timerInterval = null;
+        shots.innerHTML = "";
+        $('#question').show();
+        $('.answer').show();
+        $('#game').removeClass('result');
+    }
+    function start() {
+        $('#reset').show();
+        resetValues();
+        timer(30);
+        nextQuestion();
+        for (var i = 0; i < AOnClick.length; i++) {
+            (function (index) {
+                AOnClick[i].onclick = function () {
+                    answer(index);
+                }
+            })(i);
+        }
+        noAnswerInterval = setInterval(function () { noAnswer() }, 30000);
+    }
+    function reset() {
+        document.location.href = "";
+    }
+    $('#reset').hide();
+    document.getElementById("start").onclick = function () {
+        $('#start').hide();
+        start();
+    };
+    document.getElementById("reset").onclick = function () { reset(); };
+    $('#question').hide();
+    $('.answer').hide();
+    
 });
