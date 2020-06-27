@@ -100,7 +100,7 @@ html, body{
     text-align: left;
 }
 .result{
-    background-image: url("shots.jpg");
+    background-image: url("../src/shots.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
