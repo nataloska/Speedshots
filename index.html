@@ -5,86 +5,81 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<!--Load jasmine Framework-->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"
-		integrity="sha256-PePX8Jc4TIxzzVz0Qe4NsH3OUU8+Y49DBWvYgggNqkY=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"
-		integrity="sha256-qazAASTTgUrq9SOYkPSB3oEuqbhn+2j4kxGkVZ0GKjY=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js"
-		integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.css"
-		integrity="sha256-YzqdEMEXu1sH1t2Y9tk3XhKhxy1xMWvcA1koZx43k+8=" crossorigin="anonymous" /> -->
-
-
-	<!--Load tests-->
-	<!-- <script type="text/javascript" src="spec/speedshotsSpec.js"></script> -->
-
+    <title>Speedshots!</title>
 	<!--Load bootstrap-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-	<!--Load css-->
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- Load scripts-->
+	<script type="text/javascript" src="scripts/speedshots.js"></script>
+
+    <!--Load css-->
+	<link rel="stylesheet" href="./src/style.css" type="text/css" />
 </head>
 
 <body>
-	<div class="container-fluid">
-		<!--Nav-->
-		<div class="row">
-			<div class="navbar navbar-expand-lg col-12">
-				<ul class="navbar-nav mx-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#">Start</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="help.html">Help</a>
-					</li>
-			</div>
-		</div>
-		<!-- </div>
-	    <div class="container-fluid"> -->
-		<div class="row">
-			<div class="questions col-12">
-				<button id="start" class="btn btn-info btn-lg">Start Game</button>
-				<button id="reset" class="btn btn-info btn-lg">Reset</button>
-				<span id="time"></span>
-				<div id="game">
-					<h1 id="question"></h1>
-					<p class="answer"></p>
-					<p class="answer"></p>
-					<p class="answer"></p>
-					<p class="answer"></p>
-					<h2 id="score"></h2>
+	<!--Nav-->
+	<div class="nav">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="navbar navbar-expand col-12">
+					<ul class="navbar-nav mx-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Start</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="help.html">Help</a>
+						</li>
+                    </ul>
 				</div>
 			</div>
-			<div class="info">Welcome to Speedshots! Press Start to play or Help for more information. Enjoy!</div>
 		</div>
-		<!-- </div>
-	    <div class="container-fluid"> -->
-		<div class="row">
-			<div class="footer col-12">
-				<div class="row">
-					<div class="about col-12 col-sm-4">
-						<h3>About me:</h3>
-						<p>Student at Code Institute Full Stack Developer looking for entry/junior positions to apply my
-							new
-							skills</p>
-						<p>Codeinstitute.net</p>
+	</div>
+	<!-- Game -->
+	<div class="main">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="questions col-12">
+					<button id="start" class="btn btn-info btn-lg">Start Game</button>
+					<button id="reset" class="btn btn-info btn-lg">Reset</button>
+					<span id="time"></span>
+					<div id="game">
+						<h1 id="question"></h1>
+						<p class="answer"></p>
+						<p class="answer"></p>
+						<p class="answer"></p>
+						<p class="answer"></p>
+						<h2 id="score"></h2>
 					</div>
-					<div class="persinfo col-12 col-sm-3">
-						<h3>Address: </h3>
-						<p>Schelpenplein 2A</p>
-						<p>2042HJ Zandvoort</p>
-						<p>The Netherlands</p>
-						<p>natalia.drnkova@gmail.com</p>
-					</div>
-					<div class="SoMelink col-12 col-sm-5">
-						<a href="https://github.com/nataloska"><img src="src/github.png" alt="github" /></a>
-							<a href="https://www.linkedin.com/in/natalia-drnkova-581391199"><img src="src/linkedin.png" alt="linkedin"/></a>
-								<a href="https://www.twitter.com/nataloska77"><img src="src/twitter.png" alt="twitter"/></a>
-									<a href="https://www.instagram.com/nataloska7"><img src="src/instagram.png" alt="instagram"/></a>
-					</div>
+				</div>
+				<div class="info">Welcome to Speedshots! Press Start to play or Help for more information. Enjoy!</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="about d-none d-md-block col-md-6 col-lg-4">
+					<h3>Natalia Drnkova</h3>
+					<p>Student at Code Institute Full Stack Developer looking for entry/junior positions to
+						apply my
+						new
+						skills</p>
+					<p>Codeinstitute.net</p>
+				</div>
+				<div class="persinfo d-none d-md-block col-md-6 col-lg-3">
+					<h3>Address:</h3>
+					<p>Schelpenplein 2A</p>
+					<p>2042HJ Zandvoort</p>
+					<p>The Netherlands</p>
+					<p>natalia.drnkova@gmail.com</p>
+				</div>
+				<div class="SoMelink d-none d-lg-block col-lg-5">
+					<a href="https://github.com/nataloska"><img src="src/github.png" alt="github" /></a>
+						<a href="https://www.linkedin.com/in/natalia-drnkova-581391199"><img src="src/linkedin.png" alt="linkedin"/></a>
+							<a href="https://www.twitter.com/nataloska77"><img src="src/twitter.png" alt="twitter"/></a>
+								<a href="https://www.instagram.com/nataloska7"><img src="src/instagram.png" alt="instagram"/></a>
 				</div>
 			</div>
 		</div>
@@ -99,9 +94,6 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 	</script>
-	<!-- Load scripts-->
-	<script type="text/javascript" src="scripts/speedshots.js"></script>
-
 </body>
 
 </html>

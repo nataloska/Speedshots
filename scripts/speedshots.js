@@ -1,15 +1,7 @@
-// function selection(answer, solution) {
-//         if(answer == solution){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-// }
 document.addEventListener("DOMContentLoaded", function (event) {
     var questions = [
         {
-            question: 'Test question 1?',
+            question: '1 - Test question 1?',
             answers: [
                 { text: 'true', result: 1 },
                 { text: 'false', result: 0 },
@@ -18,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             ]
         },
         {
-            question: 'Test question 2?',
+            question: '2 - Test question 2?',
             answers: [
                 { text: 'false', result: 0 },
                 { text: 'true', result: 1 },
@@ -27,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             ]
         },
         {
-            question: 'Test question 3?',
+            question: '3 - Test question 3?',
             answers: [
                 { text: 'False', result: 0 },
                 { text: 'false', result: 0 },
@@ -66,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             counter++;
             console.log("counter = " + counter);
             question = questions[counter];
-            QOnClick.innerHTML = (counter + 1) + ' - ' + question.question;
+            QOnClick.innerHTML = question.question;
             for (var i = 0; i < AOnClick.length; i++) {
                 AOnClick[i].innerHTML = question.answers[i].text;
             }
@@ -128,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     function start() {
         $('#reset').show();
+        $('#time').show();
         resetValues();
         timer(30);
         nextQuestion();
@@ -143,14 +136,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function reset() {
         document.location.href = "";
     }
+    
     $('#reset').hide();
-    document.getElementById("start").onclick = function () {
+    $('#question').hide();
+    $('.answer').hide();
+    $('#time').hide();
+
+    $('#start').click(function() {
         $('#start').hide();
         $('.info').hide();
         start();
-    };
-    document.getElementById("reset").onclick = function () { reset(); };
-    $('#question').hide();
-    $('.answer').hide();
-    
-});
+    });
+
+    $('#reset').click(function() {
+        reset(); 
+    });
+}); 

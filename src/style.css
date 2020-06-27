@@ -1,0 +1,155 @@
+html, body{
+    min-height: 100%;
+    margin: 0;
+}
+/* Nav */
+.navbar{
+    background-color: black;
+    margin-bottom: 20px;
+}
+.nav-item {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+    text-align: center;
+}
+.nav-item a{
+    margin: 10px;
+    padding: 10px;
+    background: whitesmoke;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
+    color: black;
+}
+.nav-item a:hover{
+    background:#9f9f9f;
+}
+/* Help */
+.tutorial-content{
+    margin:auto;
+    text-align: center;
+    width: 350px;
+}
+.tutorial-content ol li{
+    text-align: left;
+}
+/* Game */
+.main{
+    display:inline-block;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+#time{
+    border: 1px solid black;
+    font-weight: 20px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius:7px;
+    animation: blinking 1s step-start infinite;
+}
+  
+@keyframes blinking {
+  50% {
+    opacity: 0.5;
+  }
+}
+.info{
+    text-align: center;
+    font-weight: 30px;
+    font-size: 46px;
+    font-family: roboto, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    min-height: 40vw;
+    margin: auto;
+}
+#question{
+    margin: 10px;
+    padding: 10px;
+    background:#9f9f9f;
+    border-radius: 25px;
+    text-align: center;
+
+}
+.answer{
+    margin: 10px;
+    padding: 10px;
+    background: tomato;
+    cursor: pointer;
+    padding-left: 30px;
+    border-radius: 25px;
+    text-align: center;
+    font-family: roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 16px;
+}
+.questions p:hover{
+    background:#9f9f9f;
+}
+.questions{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+#reset{
+    margin-bottom: 15px;
+}
+
+#game{
+    text-align: left;
+}
+.result{
+    background-image: url("shots.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 65vh;
+    font-weight: 30px;
+    font-size: 46px;
+    font-family: roboto, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#score {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* footer */
+.footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:137px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: white;
+    text-shadow: 1px 1px 2px #4a4a4a;
+}
+.about p{
+    margin:0;
+}
+.persinfo p{
+    margin:0;
+}
+.about{
+    background-color: black;
+}
+.persinfo{
+    background-color: black;
+}
+.SoMelink{
+    padding:0;
+    text-align: center;
+    background-color: black;
+}
+.SoMelink img{
+    width: 65px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
