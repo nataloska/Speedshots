@@ -6,7 +6,7 @@ For this project to showcase my Javascript skills I created a simple fast-paced 
  
 This game is meant for anyone that wants fast access to a simple quiz game without having to install any apps. Straight from the home page you can start a game and start playing without having to enter any information or register. The idea is to make it as easy to play and fast as possible at its core, so anyone can access it.
 
-*Wireframes
+Wireframes can be found in the wireframes folder.
 
 ## Features
 
@@ -33,7 +33,7 @@ In this project I used HTML, CSS3 and JS to build a fast-paced web game.
 
 ## Testing
 
-*testing
+For testing I used Chrome developer tools to check if the layout stayed consistent and comfortable on multiple screensizes and mobile devices. 
 
 ## Deployment
 
