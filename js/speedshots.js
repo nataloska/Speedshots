@@ -135,9 +135,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function nextQuestion() {
         if (questions.length > (counter + 1)) {
-            console.log("questions length = " + questions.length);
+            //console.log("questions length = " + questions.length);
             counter++;
-            console.log("counter = " + counter);
+            //console.log("counter = " + counter);
             question = questions[counter];
             QOnClick.innerHTML = question.question;
             for (var i = 0; i < AOnClick.length; i++) {
@@ -151,18 +151,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $('#question').hide();
             $('.answer').hide();
             $('#game').addClass('result');
-            shots.innerHTML = 'End of game, come again!';
+            shots.innerHTML = 'The end! <br /> I Hope you had a good fun and you are really drunk!';
         }
     }
     function answer(num) {
         let result = questions[counter].answers[num].result;
-        console.log("Result = " + result);
+        //console.log("Result = " + result);
         if (result == 1) {
             resetValues();
             $('#question').hide();
             $('.answer').hide();
             $('#game').addClass('result');
-            shots.innerHTML = 'Correct, no shots!';
+            shots.innerHTML = 'Perfect, congratulations! Sorry no shots for you!';
             timer(5);
             correctAnswer = setInterval(function () { start() }, 5000);
         } else {
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $('#question').hide();
             $('.answer').hide();
             $('#game').addClass('result');
-            shots.innerHTML = 'Incorrect, 1 shot!';
+            shots.innerHTML = 'Oh no!! You had the wrong answer, you have to drink 1 shot!';
             timer(5);
             correctAnswer = setInterval(function () { start() }, 5000);
         }
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#question').hide();
         $('.answer').hide();
         $('#game').addClass('result');
-        shots.innerHTML = 'Too late! 2 shots';
+        shots.innerHTML = 'Oh No!! Too late, you have to drink 2 shots';
         timer(5);
         _noanswer = setInterval(function () { start() }, 5000);
     }

@@ -41,6 +41,19 @@ html, body{
     margin: auto;
     width: 100%;
 }
+/* .homepage img{
+    float: left;
+} */
+.info{ 
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 30px;
+    font-size: 46px;
+    font-family: roboto, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    max-height: 20vh;
+    margin: auto;
+ }
 #time{
     border: 1px solid black;
     font-weight: 20px;
@@ -55,27 +68,22 @@ html, body{
     opacity: 0.5;
   }
 }
-.info{
-    text-align: center;
-    font-weight: 30px;
-    font-size: 46px;
-    font-family: roboto, sans-serif;
-    text-shadow: 2px 2px 4px #000000;
-    min-height: 40vw;
-    margin: auto;
-}
 #question{
     margin: 10px;
     padding: 10px;
-    background:#9f9f9f;
+    background:black;
     border-radius: 25px;
     text-align: center;
-
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#start, #reset{
+    background-color: red;
 }
 .answer{
     margin: 10px;
     padding: 10px;
-    background: tomato;
+    background: #808080;
     cursor: pointer;
     padding-left: 30px;
     border-radius: 25px;
@@ -83,9 +91,11 @@ html, body{
     font-family: roboto, sans-serif;
     font-size: 16px;
     font-weight: 16px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 .questions p:hover{
-    background:#9f9f9f;
+    background:#D3D3D3;
 }
 .questions{
     text-align: center;
